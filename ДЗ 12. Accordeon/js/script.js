@@ -11,9 +11,7 @@ let container = (function (element) {
 
   return function () {
     let _mainElement = {},
-      _items = {},
-      _contents = {};
-
+      _items = {};
 
     let _actionClick = function (e) {
         if (!e.target.classList.contains('container-item-header')) {
