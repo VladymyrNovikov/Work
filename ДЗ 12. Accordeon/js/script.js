@@ -1,53 +1,77 @@
-let container = (function (element) {
+function Accordeon(el, config) {
+   this.el = el;
+   this.config = config;
+}
 
-  let _getItem = function (elements, className) {
-    elements.forEach(function (item) {
-      if (item.classList.contains(className)) {
-        element = item;
-      }
-    });
-    return element;
-  };
+Accordeon.prototype.init = function () {
+   this.setInitialValues();
+   this.el.addEventListener('click', this.onGetBody.bind(this));
+};
 
-  return function () {
-    let _mainElement = {},
-      _items = {};
+Accordeon.prototype.setInitialValues = function () {
+   this.accordeonBody = this.el.getElementsByClassName('body');
 
-    let _actionClick = function (e) {
-        if (!e.target.classList.contains('container-item-header')) {
-          return;
-        }
-        e.preventDefault();
-        let header = e.target,
-          item = header.parentElement,
-          itemActive = _getItem(_items, 'show');
+   for (let i = 0; i < this.accordeonBody.length; i++) {
+      this.accordeonBody[i].hidden = true;
+      this.accordeonBody[i].setAttribute('index', i);
+      this.accordeonBody[i].setAttribute('value', true);
+   }
+};
 
-        if (itemActive === undefined) {
-          item.classList.add('show');
-        } else {
+Accordeon.prototype.toСollapseOther = function (index) {
 
-          itemActive.classList.remove('show');
+   for (let i = 0; i < this.accordeonBody.length; i++) {
+      if (i == index) continue;
+      this.accordeonBody[i].hidden = true;
+   }
+};
 
-          if (itemActive !== item) {
+Accordeon.prototype.open = function (index) {
 
-            item.classList.add('show');
-          }
-        }
-      },
-      _setupListeners = function () {
-        _mainElement.addEventListener('click', _actionClick);
-      };
+   this.accordeonBody[index].hidden = false;
+};
 
-    return {
-      init: function (element) {
-        _mainElement = (typeof element === 'string' ? document.querySelector(element) : element);
-        _items = _mainElement.querySelectorAll('.container-item');
-        _setupListeners();
-      }
-    };
+Accordeon.prototype.close = function (index) {
 
-  };
-})();
+   this.accordeonBody[index].hidden = true;
+};
 
-let container1 = container();
-container1.init('#container');
+Accordeon.prototype.toggle = function (index) {
+   if (this.accordeonBody[index].hidden == true) this.accordeonBody[index].hidden = false;
+   else this.accordeonBody[index].hidden = true;
+};
+
+Accordeon.prototype.getValue = function (index) {
+   let value = this.accordeonBody[index].getAttribute('value');
+
+   if (value == 'true') {
+      value = false;
+      this.accordeonBody[index].setAttribute('value', value);
+   } else {
+      value = true;
+      this.accordeonBody[index].setAttribute('value', value);
+   }
+
+   return value;
+};
+
+Accordeon.prototype.onGetBody = function (event) {
+
+   itemIndexClicked = event.target.nextElementSibling.getAttribute('index');
+
+   this.open(itemIndexClicked);
+
+   if (this.config.collapseOther) this.toСollapseOther(itemIndexClicked);
+
+   else if (this.getValue(itemIndexClicked)) {
+      this.close(itemIndexClicked);
+   }
+};
+
+const accordion = new Accordeon(
+   document.getElementById('container'), {
+      collapseOther: false
+   }
+);
+
+accordion.init();
