@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/script.js" async></script>
+	<title>Document</title>
+
+</head>
+
+<body>
+	 <div class="main-container">
+    <div id="albumsList" class="albums-list">
+    </div>
+
+    <div id="photosList" class="photos-list">
+    </div>
+  </div>  
+
+  <script type="text/template" id="albumItemTemplate">
+    <div class="{{class}} full-width" id="album-{{id}}">
+      {{text}}
+    </div>
+  </script>
+
+  <script type="text/template" id="photosItemTemplate">    
+    <div class="{{class}} full-width">
+      <img src="{{url}}" alt="{{title}}">
+    </div>
+  </script>
+</body>
+
+</html>

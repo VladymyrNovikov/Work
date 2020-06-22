@@ -1,0 +1,24 @@
+.main-container {
+    display: flex;
+}
+
+.full-width {
+    width: 100%;
+    max-width: 100%;
+    clear: both;
+    margin: 0 auto;    
+}
+
+.albums-list-item {
+    font-weight: bold;
+    color: black;
+    background-color: rgb(209, 209, 170);
+    border: 1px grey;
+    padding: 5px;    
+}
+
+.selected {
+    font-weight: normal;
+    color: rgb(197, 231, 102);
+    background-color: rgb(110, 140, 187);
+}
