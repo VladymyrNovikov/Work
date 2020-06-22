@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/script.js" async></script>
+	<title>Document</title>
+
+</head>
+
+<body>
+	<div id="taskList" class="list">
+	</div>
+
+	<form id="addTaskForm">
+		<input type="text" id="inputTask">
+		<input type="submit" id="btnAddTask" value="ADD">
+	</form>
+
+	<script type="text/template" id="taskTemplate">
+		<div class="todo-item full-width">
+      {{text}}      
+  </script>
+</body>
+
+</html>

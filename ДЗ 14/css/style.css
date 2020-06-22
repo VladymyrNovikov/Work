@@ -1,0 +1,20 @@
+.todo-item {
+   font-weight: bold;
+   color: black;
+   background-color: rgb(49, 218, 91);
+   border: 1px grey;
+   padding: 5 px;
+}
+
+.todo-item.is-done {
+   font-weight: normal;
+   color: rgb(17, 17, 17);
+   background-color: rgb(253, 74, 74);
+}
+
+.full-width {
+   width: 100%;
+   max-width: 100%;
+   clear: both;
+   margin: 0 auto;
+}
