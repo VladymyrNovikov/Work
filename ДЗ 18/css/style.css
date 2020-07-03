@@ -1,0 +1,27 @@
+.del-btn {
+   font-weight: bold;
+   float: right;
+   margin-right: 15px;
+}
+
+.todo-item {
+   font-weight: bold;
+   color: black;
+   background-color: yellow;
+   border: 1px grey;
+   padding: 5 px;
+   line-height: 40px;
+}
+
+.is-done {
+   font-weight: normal;
+   color: darkgrey;
+   background-color: lightgreen;
+}
+
+.full-width {
+   width: 100%;
+   max-width: 100%;
+   clear: both;
+   margin: 0 auto;
+}
