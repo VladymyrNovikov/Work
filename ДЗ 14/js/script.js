@@ -12,8 +12,6 @@ const taskTemplate = document.querySelector('#taskTemplate').innerHTML;
 addTaskForm.addEventListener('submit', onSubmitAddTask);
 taskList.addEventListener('click', onClickListItem);
 
-// homework 14 starts here
-
 fetch('https://jsonplaceholder.typicode.com/todos')
    .then(response => {
       return response.json();
