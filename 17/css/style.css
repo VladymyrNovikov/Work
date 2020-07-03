@@ -1,0 +1,42 @@
+.sticker-form {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.sticker-new {
+   display: flex;
+   flex-direction: column;
+   margin: 10px;
+}
+
+.sticker-sheet {
+   display: flex;
+   flex-direction: column;
+   margin: 10px;
+}
+
+.add * {
+   background-color: #BAFBAB;
+}
+
+.hold * {
+   background-color: #FFFFBF;
+}
+
+.sticker-panel {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.text-field {
+   border-top-style: hidden;
+   border-right-style: hidden;
+   border-left-style: hidden;
+   border-bottom-style: hidden;
+   resize: none;
+}
+
+.sticker-button {
+   margin: 10px;
+}

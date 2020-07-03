@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+    defer
+  </script>
+  <script src="js/script.js" defer></script>
+  <title>Document</title>
+
+</head>
+
+<body>
+  <form id="stickerForm" class="sticker-form">
+  </form>
+
+  <script type="text/template" id="stickerTemplate">
+    <div class="{{classSheet}}" data-id="{{id}}">
+      <div class="{{classPanel}}">
+        <span class="{{classButton1}}">{{button1Label}}</span>
+        <span class="{{classButton2}}">{{button2Label}}</span>
+      </div>
+      <textarea class="{{classText}}" cols="{{textColumns}}" rows="{{textRows}}">{{textValue}}</textarea>
+    </div>
+  </script>
+
+</body>
+
+</html>
